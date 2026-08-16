@@ -11,6 +11,10 @@
     "5432": { "label": "PostgreSQL" }
   },
 
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+  },
+
   "customizations": {
     "vscode": {
       "extensions": [
