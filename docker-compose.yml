@@ -26,13 +26,7 @@ services:
       - DEBUG=1
     depends_on:
       - db
-    command: >
-      sh -c "if [ -f manage.py ]; then
-               python manage.py migrate && python manage.py runserver 0.0.0.0:8000;
-             else
-               echo 'No Django project yet. Run: django-admin startproject config .' &&
-               sleep infinity;
-             fi"
+    command: sleep infinity
 
   frontend:
     build:
@@ -45,13 +39,7 @@ services:
       - "5173:5173"
     depends_on:
       - backend
-    command: >
-      sh -c "if [ -f index.html ]; then
-               npm install && npm run dev;
-             else
-               echo 'No React project yet. Run: npm create vite@latest . -- --template react' &&
-               sleep infinity;
-             fi"
+    command: sleep infinity
 
 volumes:
   postgres_data:
