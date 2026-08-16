@@ -19,6 +19,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./backend:/app
+      - .:/workspace
     ports:
       - "8000:8000"
     environment:
